@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import ReactSelect from "react-select"
-import {Tag} from "./App"
+import type {Tag} from "./App"
 import styles from "./NotesList.module.css"
 
 type SimplifiedNote = {

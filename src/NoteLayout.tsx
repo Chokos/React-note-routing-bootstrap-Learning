@@ -1,14 +1,15 @@
 import type {Note} from "./App.tsx";
-import {Navigate, Outlet, useOutletContext} from "react-router-dom";
+import {Navigate, Outlet, useOutletContext, useParams} from "react-router-dom";
 
 type NoteLayoutProps = {
-    note: Note[];
+    notes: Note[];
 }
-export function NoteLayout ({notes}:NoteLayoutProps) {
-    const {id} = userParams()
-    const  note = notes.find(n=> n.id === id)
 
-    if (note== null ) return <Navigate to="/" replace/>
+export function NoteLayout ({notes}: NoteLayoutProps) {
+    const {id} = useParams()
+    const note = notes.find(n => n.id === id)
+
+    if (note == null) return <Navigate to="/" replace/>
 
     return <Outlet context={note} />
 }
