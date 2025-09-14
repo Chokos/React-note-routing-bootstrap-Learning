@@ -1,5 +1,5 @@
 import { NoteForm } from "./NoteForm.tsx"
-import type {NoteData} from "./App.tsx";
+import type {NoteData, Tag} from "./App.tsx";
 
 
 
@@ -13,9 +13,10 @@ type NewNoteProps = {
 
 export function NewNote ({onSubmit,onAddTag,availableTags}:NewNoteProps){
 
-    return
+    return(
     <>
         <h1 className={"mb-4"}>New Note</h1>
         <NoteForm  onSubmit={onSubmit} onAddTag={onAddTag} availableTags={availableTags}/>
     </>
+    )
 }
